@@ -48,10 +48,13 @@ async function uploadFiles(files) {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:3000/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://drag-drop-q2z7.onrender.com/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await response.json();
       displayUploadedFile(data.secure_url);
